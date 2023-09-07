@@ -1,9 +1,9 @@
 ﻿using ClassLibrary;
-namespace OtusHW.Task
+namespace OtusHW.Tasks
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             var notificationService = new NotificationService();
             var imageDownloader = new ImageDownloader();
