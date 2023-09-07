@@ -10,7 +10,7 @@ namespace ClassLibrary
         string fileName = "bigimage.jpg";
 
         public delegate void DownloadHendler();
-        public event Action DownloadStarted;
+        public event Action? DownloadStarted;
         public event DownloadHendler? DownloadFinished;
 
         public async Task Download()
