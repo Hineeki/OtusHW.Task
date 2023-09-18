@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ImageDownloader\ClassLibrary.csproj" />
+    <ProjectReference Include="..\ImageDownloader\MyLibrary.csproj" />
   </ItemGroup>
 
 </Project>

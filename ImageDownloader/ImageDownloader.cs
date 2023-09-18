@@ -1,13 +1,13 @@
 ﻿using System.Net;
 using System.Threading.Channels;
 
-namespace ClassLibrary
+namespace MyLibrary
 
 {
     public class ImageDownloader
     {
-        string remoteUri = "https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg";
-        string fileName = "bigimage.jpg";
+        string remoteUri = @"https://stsci-opo.org/STScI-01G5PGR10JASH299DZBV7S15CX.png";
+        string fileName = "bigimage.png";
 
         public delegate void DownloadHendler();
         public event Action? DownloadStarted;
@@ -17,7 +17,7 @@ namespace ClassLibrary
         {
             WebClient myWebClient = new WebClient();
             DownloadStarted.Invoke();
-            myWebClient.DownloadFileTaskAsync(remoteUri, fileName);
+            await myWebClient.DownloadFileTaskAsync(remoteUri, fileName);
             DownloadFinished?.Invoke();
         }
     }

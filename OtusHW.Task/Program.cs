@@ -1,5 +1,5 @@
-﻿using ClassLibrary;
-namespace OtusHW.Tasks
+﻿using MyLibrary;
+namespace OtusHW.Tasksf
 {
     internal class Program
     {
@@ -12,7 +12,8 @@ namespace OtusHW.Tasks
             imageDownloader.DownloadStarted += notificationService.OnStartDownloading;
             imageDownloader.DownloadFinished += notificationService.OnFinishDownloadind;
 
-            bool asd = imageDownloader.Download().IsCompleted;
+            Task downloading = imageDownloader.Download();//создаётся таска асинхроного метода, чтобы потом её проверить на completed
+            
 
             while (true)
             {
@@ -21,7 +22,8 @@ namespace OtusHW.Tasks
                 if (key.Key != ConsoleKey.A)
                 {
                     Console.Clear();
-                    Console.WriteLine(asd);
+                    bool asd = downloading.IsCompleted;// чекаем таску, а не метод
+                    Console.WriteLine("Is downloaded: "+ asd);
                 }
                 else
                 {
