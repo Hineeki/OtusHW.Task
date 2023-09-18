@@ -27,6 +27,7 @@ namespace OtusHW.Tasksf
                 }
                 else
                 {
+                    await downloading;
                     break;
                 }
             }
